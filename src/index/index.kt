@@ -1,6 +1,6 @@
 package index
 
-import app.*
+import components.repmaxapp.repMaxApp
 import kotlinext.js.*
 import kroute.hashRouter
 import kroute.route
@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
 
     render(document.getElementById("root")) {
         hashRouter {
-            app()
+            repMaxApp()
         }
 
         /* router {
