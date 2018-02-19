@@ -1,9 +1,7 @@
-package components.header
+package components
 
-import kroute.LinkComponent
 import kroute.routeLink
 import react.*
-import react.dom.a
 import react.dom.h1
 import react.dom.header
 

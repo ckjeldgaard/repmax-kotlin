@@ -1,6 +1,5 @@
-package components.contentarea
+package components
 
-import components.home.Home
 import kroute.route
 import kroute.router
 import kroute.switch

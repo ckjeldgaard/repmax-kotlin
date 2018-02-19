@@ -1,13 +1,9 @@
 package index
 
-import components.repmaxapp.repMaxApp
+import components.repMaxApp
 import kotlinext.js.*
 import kroute.hashRouter
-import kroute.route
-import kroute.router
-import kroute.switch
 import react.dom.*
-import react.history.History
 import kotlin.browser.*
 
 fun main(args: Array<String>) {

@@ -1,7 +1,5 @@
-package components.repmaxapp
+package components
 
-import components.contentarea.contentArea
-import components.header.header
 import react.RBuilder
 import react.RComponent
 import react.RProps

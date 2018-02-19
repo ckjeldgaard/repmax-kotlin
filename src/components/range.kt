@@ -1,4 +1,4 @@
-package components.range
+package components
 
 import util.*
 import kotlinx.html.*

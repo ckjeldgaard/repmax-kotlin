@@ -1,6 +1,7 @@
-package components.home
+package components
 
-import components.range.range
+import model.business.FormulaBuilder
+import model.business.RepmaxFormulaBuilder
 import react.*
 import react.dom.article
 
@@ -19,13 +20,6 @@ class Home : RComponent<RProps, RmInputState>() {
         this.reps = 5
     }
 
-    override fun RBuilder.render() {
-        article {
-            range(id = "weightRange", label = "Weight", abbr = " kg. ", min = 0, max = 200, step = 2, default = DEFAULT_WEIGHT, inputHandler = { changeWeight(it) })
-            range(id = "repsRange", label = "Reps", min = 1, default = DEFAULT_REPS, inputHandler = { changeReps(it) })
-        }
-    }
-
     private fun changeWeight(w: Int) {
         setState {
             weight = w
@@ -37,6 +31,18 @@ class Home : RComponent<RProps, RmInputState>() {
             reps = r
         }
     }
+
+    private fun formulaBuilder(): FormulaBuilder {
+        return RepmaxFormulaBuilder()
+    }
+
+    override fun RBuilder.render() {
+        article {
+            range(id = "weightRange", label = "Weight", abbr = " kg. ", min = 0, max = 200, step = 2, default = DEFAULT_WEIGHT, inputHandler = { changeWeight(it) })
+            range(id = "repsRange", label = "Reps", min = 1, default = DEFAULT_REPS, inputHandler = { changeReps(it) })
+        }
+    }
+
 }
 
 fun RBuilder.home() = child(Home::class) {}
