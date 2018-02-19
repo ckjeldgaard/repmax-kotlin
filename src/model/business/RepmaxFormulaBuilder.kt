@@ -5,9 +5,7 @@ import model.formula.LombardiFormula
 
 class RepmaxFormulaBuilder : FormulaBuilder {
 
-    override fun getFormulas(): Collection<Formula> {
-        val formulas = arrayListOf<Formula>()
-        formulas.add(LombardiFormula())
-        return formulas
+    override fun getFormulas(): Array<Formula> {
+        return arrayOf(LombardiFormula())
     }
 }

@@ -40,6 +40,7 @@ class Home : RComponent<RProps, RmInputState>() {
         article {
             range(id = "weightRange", label = "Weight", abbr = " kg. ", min = 0, max = 200, step = 2, default = DEFAULT_WEIGHT, inputHandler = { changeWeight(it) })
             range(id = "repsRange", label = "Reps", min = 1, default = DEFAULT_REPS, inputHandler = { changeReps(it) })
+            result(weight = state.weight, reps = state.reps, formulaBuilder = formulaBuilder())
         }
     }
 
