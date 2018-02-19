@@ -11,13 +11,15 @@ import react.dom.p
 class Home : RComponent<RProps, RState>() {
 
     private val DEFAULT_WEIGHT: Int = 50
+    private val DEFAULT_REPS: Int = 5
 
     override fun RBuilder.render() {
         article {
             p {
                 +"Welcome to React with Kotlin"
             }
-            range(id = "weightRange", label = "Weight", abbr = " kg. ", min = 0, max = 200, step = 2, default = DEFAULT_WEIGHT, inputHandler = { w -> changeWeight(w) })
+            range(id = "weightRange", label = "Weight", abbr = " kg. ", min = 0, max = 200, step = 2, default = DEFAULT_WEIGHT, inputHandler = { changeWeight(it) })
+            range(id = "repsRange", label = "Reps", min = 1, default = DEFAULT_REPS, inputHandler = { changeReps(it) })
         }
     }
 
@@ -25,8 +27,9 @@ class Home : RComponent<RProps, RState>() {
         console.log("Changed weight = " + weight)
     }
 
-    // <Range label='Weight' abbr=' kg.' min={0} max={200} step={2} default={this.DEFAULT_WEIGHT} inputHandler={this.changeWeight}/>
-
+    private fun changeReps(reps: Int) {
+        console.log("Changed reps = " + reps)
+    }
 }
 
 fun RBuilder.home() = child(Home::class) {}

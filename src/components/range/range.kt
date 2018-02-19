@@ -3,7 +3,6 @@ package components.range
 import util.*
 import kotlinx.html.*
 import kotlinx.html.js.onChangeFunction
-import org.w3c.dom.events.Event
 import react.*
 import react.dom.*
 
@@ -28,14 +27,6 @@ class Range(props: RangeProps) : RComponent<RangeProps, RangeState>(props) {
         value = props.default
     }
 
-    private fun handleChange(event: Event) {
-        val inputValue = event.inputValue
-        if (inputValue != "") {
-            setState { value = inputValue.toInt() }
-            props.inputHandler(inputValue.toInt())
-        }
-    }
-
     override fun RBuilder.render() {
         div("range") {
             div("meta") {
@@ -52,6 +43,7 @@ class Range(props: RangeProps) : RComponent<RangeProps, RangeState>(props) {
                 attrs.min = props.min.toString()
                 attrs.max = props.max.toString()
                 attrs.step = props.step.toString()
+                attrs.defaultValue = state.value.toString()
                 attrs.onChangeFunction = {
                     val eventValue = it.inputValue.toInt()
                     setState { value = eventValue }
@@ -61,10 +53,9 @@ class Range(props: RangeProps) : RComponent<RangeProps, RangeState>(props) {
             }
         }
     }
-
 }
 
-fun RBuilder.range(id: String = "range", label: String, abbr: String, min: Int, max: Int, step: Int, default: Int, inputHandler: (value: Int) -> Unit) = child(Range::class) {
+fun RBuilder.range(id: String = "range", label: String, abbr: String = "", min: Int = 0, max: Int = 10, step: Int = 1, default: Int, inputHandler: (value: Int) -> Unit) = child(Range::class) {
     attrs.id = id
     attrs.label = label
     attrs.abbr = abbr
