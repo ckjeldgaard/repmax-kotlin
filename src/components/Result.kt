@@ -1,5 +1,6 @@
 package components
 
+import model.business.Avg
 import model.business.FormulaBuilder
 import model.business.FormulaMatrix
 import react.RBuilder
@@ -39,9 +40,13 @@ class Result(props: ResultProps) : RComponent<ResultProps, RState>(props) {
                 }
                 tbody {
                     for(i in matrix.indices) {
-                        tr {
+                        var activeClass = ""
+                        if ((i+1) == props.reps) {
+                            activeClass = "active"
+                        }
+                        tr(activeClass) {
                             td { +"${i+1}RM" }
-                            td { +"Avg" }
+                            td { +"${ Avg(matrix[i].toIntArray()).average() }" }
                             for(j in matrix[i].indices) {
                                 td {
                                     +"${matrix[i][j]}"
