@@ -40,7 +40,7 @@ class Result(props: ResultProps) : RComponent<ResultProps, RState>(props) {
                 tbody {
                     for(i in matrix.indices) {
                         tr {
-                            td { +"RM" }
+                            td { +"${i+1}RM" }
                             td { +"Avg" }
                             for(j in matrix[i].indices) {
                                 td {
