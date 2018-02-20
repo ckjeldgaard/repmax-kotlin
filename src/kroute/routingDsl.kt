@@ -1,6 +1,7 @@
 package kroute
 
 import react.*
+import react.dom.WithClassName
 import kotlin.reflect.KClass
 
 fun RBuilder.hashRouter(handler: RHandler<RProps>) = child(HashRouterComponent::class, handler)
@@ -20,9 +21,10 @@ fun RBuilder.route(path: String, component: KClass<out React.Component<*, *>>, e
             }
         }
 
-fun RBuilder.routeLink(to: String, handler: RHandler<RProps>) = child(LinkComponent::class) {
+fun RBuilder.routeLink(to: String, className: String = "", handler: RHandler<RProps>) = child(LinkComponent::class) {
     attrs {
         this.to = to
+        this.className = className
     }
     handler()
 }

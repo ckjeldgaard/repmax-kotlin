@@ -13,11 +13,18 @@ interface HeaderProps : RProps {
 class Header : RComponent<HeaderProps, RState>() {
     override fun RBuilder.render() {
         header {
+            if (displayBackLink()) {
+                routeLink(to = "/", className = "icon back") {}
+            }
             h1 {
                 +props.title
             }
-            routeLink("/about") {}
+            routeLink(to = "/about", className = "icon about") {}
         }
+    }
+
+    private fun displayBackLink(): Boolean {
+        return props.locationPath != "/"
     }
 }
 

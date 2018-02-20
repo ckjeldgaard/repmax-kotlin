@@ -55,6 +55,7 @@ external interface BrowserRouterProps : RouterProps {
 
 external interface LinkProps : RProps {
     var to: String
+    var className: String
 }
 
 external interface RouteResultProps<T : RProps> : RProps {

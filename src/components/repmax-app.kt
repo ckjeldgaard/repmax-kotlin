@@ -5,6 +5,7 @@ import react.RComponent
 import react.RProps
 import react.RState
 import react.dom.div
+import react.history.History
 
 class RepMaxApp : RComponent<RProps, RState>() {
 
@@ -12,7 +13,7 @@ class RepMaxApp : RComponent<RProps, RState>() {
 
     override fun RBuilder.render() {
         div {
-            header(TITLE, "")
+            header(TITLE, History.createHashHistory().location.pathname)
         }
         contentArea()
     }
