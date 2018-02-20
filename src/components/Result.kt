@@ -26,7 +26,6 @@ class Result(props: ResultProps) : RComponent<ResultProps, RState>(props) {
 
     override fun RBuilder.render() {
         val matrix = buildMatrix()
-        console.log(matrix)
         div("result") {
             table {
                 thead {
@@ -45,7 +44,7 @@ class Result(props: ResultProps) : RComponent<ResultProps, RState>(props) {
                             td { +"Avg" }
                             for(j in matrix[i].indices) {
                                 td {
-                                    +"c ${matrix[i][j]}"
+                                    +"${matrix[i][j]}"
                                 }
                             }
                         }
