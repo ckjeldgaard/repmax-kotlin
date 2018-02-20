@@ -1,7 +1,7 @@
 package model.formula
 
-import kotlin.js.Math.pow
 import kotlin.math.floor
+import kotlin.math.pow
 
 class LombardiFormula : Formula {
     override fun name(): String {
@@ -9,11 +9,11 @@ class LombardiFormula : Formula {
     }
 
     override fun repmax(weight: Int, reps: Int): IntArray {
-        val oneRM = weight * pow(reps.toDouble(), (1 / 10).toDouble())
-        val rms = IntArray(10)
-        for (i in 2 until 10) {
-            rms[i] = floor(oneRM / (pow(i.toDouble(), (1 / 10).toDouble()))).toInt()
+        val oneRM = weight.toDouble() * reps.toDouble().pow(1.0 / 10.0)
+        val rms = arrayListOf(floor(oneRM).toInt())
+        for (i in 2..10) {
+            rms.add(floor(oneRM / i.toDouble().pow(1.0 / 10.0)).toInt())
         }
-        return rms
+        return rms.toIntArray()
     }
 }
