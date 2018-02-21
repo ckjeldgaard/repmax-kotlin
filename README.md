@@ -7,7 +7,7 @@
 Created with the [create-react-kotlin-app](https://github.com/JetBrains/create-react-kotlin-app) tool.
 
 This is a simple progressive web app capable of calculating [one-repetition maximums](https://en.wikipedia.org/wiki/One-repetition_maximum) for weight training.
-This is primarily an experimental web app written in [React](https://reactjs.org/) and [Kotlin](https://kotlinlang.org/) and is a port of [a similar RepMax repo]((https://github.com/ckjeldgaard/repmax)) written in TypeScript.
+This is primarily an experimental web app written in [React](https://reactjs.org/) and [Kotlin](https://kotlinlang.org/) and is a port of [a similar RepMax repo](https://github.com/ckjeldgaard/repmax) written in TypeScript.
 
 ## Build Setup
 
