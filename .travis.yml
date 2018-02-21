@@ -1,11 +1,17 @@
-language: node_js
-node_js:
-  - "stable"
+language: java
+jdk:
+  - oraclejdk8
+env:
+  - NODE_VERSION=0.12
+install:
+  - nvm install $NODE_VERSION
+  - npm install
+script:
+  - nvm use $NODE_VERSION
+  - npm run build
 cache:
   directories:
   - node_modules
-script:
-  - npm run build
 deploy:
   provider: pages
   skip_cleanup: true
