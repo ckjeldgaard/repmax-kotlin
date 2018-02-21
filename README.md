@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ckjeldgaard/repmax-kotlin.svg?branch=master)](https://travis-ci.org/ckjeldgaard/repmax-kotlin)
+
 # RepMax Kotlin
 
 > A Kotlin and React One-Rep Max (1RM) calculator.
@@ -28,3 +30,4 @@ npm run deploy
 
 * Currently no units test due to lack of a Jest Kotlin wrapper. [See this note](https://github.com/JetBrains/create-react-kotlin-app#limitations).
 * Currently no progressive web app support due to lack of service worker.
+* [Travis CI](https://travis-ci.org/ckjeldgaard/repmax-kotlin) build currently failing due to Kotlin support.
