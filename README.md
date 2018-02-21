@@ -19,6 +19,9 @@ npm start
 # build for production with minification
 npm run build
 
+# deploy to GitHub pages
+npm run deploy
+
 ```
 
 ## Limitations
